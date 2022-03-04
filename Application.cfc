@@ -6,6 +6,8 @@
     <!---OnApplicationStart() method--->
 	<cffunction name="onApplicationStart" returntype="boolean" >		
 		<cfset application.utils = createObject("component",'utils') />
+		<cfset application.task23 = createObject("component",'task23') />
+		<cfset application.tagCloud = createObject("component",'tagCloud') />
 		<cfreturn true />
 	</cffunction>
 
