@@ -1,7 +1,10 @@
 <!-- Set the value of MyDatabase to be the name you published the database under -->
 <cfcomponent output="false">
-    <cfset this.name = 'CF 28 Task' />    
-    <cfset this.datasource = 'cf28tasks' />   
+    <cfset this.name = 'CF 28 Task' />
+	<cfset this.applicationTimeout = createtimespan(0,2,0,0) />    
+    <cfset this.datasource = 'cf28tasks' /> 
+	<cfset this.sessionManagement = true />
+	<cfset this.sessionTimeout = createTimespan(0,0,30,0) />  
 
     <!---OnApplicationStart() method--->
 	<cffunction name="onApplicationStart" returntype="boolean" >		
