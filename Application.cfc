@@ -5,12 +5,14 @@
     <cfset this.datasource = 'cf28tasks' /> 
 	<cfset this.sessionManagement = true />
 	<cfset this.sessionTimeout = createTimespan(0,0,30,0) />  
+	
 
     <!---OnApplicationStart() method--->
 	<cffunction name="onApplicationStart" returntype="boolean" >		
 		<cfset application.utils = createObject("component",'utils') />
 		<cfset application.task23 = createObject("component",'task23') />
 		<cfset application.tagCloud = createObject("component",'tagCloud') />
+		<cfset application.myglobalvariable = structNew()>
 		<cfreturn true />
 	</cffunction>
 

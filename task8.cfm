@@ -3,14 +3,20 @@
 
 <cfset glob_var = application.myglobalvariable />
 
-<CFSET value=StructInsert(glob_var, "#fld_userKey#", "#fld_userValue#")>
+<cfif structKeyExists(glob_var, "#fld_userKey#") EQ "YES">
+<cfset value=StructUpdate(glob_var, "#fld_userKey#", "#fld_userValue#")>
+<cfelse>
+<cfset value=StructInsert(glob_var, "#fld_userKey#", "#fld_userValue#")>
+</cfif>
+
 <cfdump  var="#glob_var#">
 </cfif>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8" />
-<title>Task 7</title>
+<title>Task 8</title>
 </head>
 <body>
 <cfform id="">

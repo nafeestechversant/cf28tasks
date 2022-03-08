@@ -1,5 +1,13 @@
 <cfif structKeyExists(form,'saveForm')>
-<cfset application.task23.addUser(form.Field17,form.Field19,form.fld_userdob,form.Field14,form.Field12,form.Field16,form.Field22,form.Field23,form.Field13,form.Field25) />
+<cfif structKeyExists(form,"Field12") and len(trim(form.Field12))>
+<cfset thisDir = expandPath(".")>
+<cffile action="upload" fileField="Field12" destination="#thisDir#" result="fileUpload"
+nameconflict="overwrite" accept="application/pdf,application/vnd.ms-word" >
+<cfif fileUpload.fileWasSaved>
+</cfif>
+</cfif>
+
+<cfset application.task23.addUser(form.Field17,form.Field19,form.fld_userdob,form.Field14,#fileUpload.serverfile#,form.Field16,form.Field22,form.Field23,form.Field13,form.Field25) />
 </cfif>
 
 <!DOCTYPE html>
@@ -52,18 +60,12 @@
 
 <li id="fo54li19" class="focused">
 	<fieldset>
-	<!--[if !IE | (gte IE 8)]-->
+
 	<legend id="title19" class="desc notranslate">
 		Are you willing to relocate?
 				<span id="req_19" class="req">*</span>
 			</legend>
-	<!--[endif]-->
-	<!--[if lt IE 8]>
-	<label id="title19" class="desc">
-		Are you willing to relocate?
-				<span id="req_19" class="req">*</span>
-			</label>
-	<![endif]-->
+	
 	<div>
   <input id="radioDefault_19" name="Field19" type="hidden" value="">
     <span>
@@ -209,7 +211,7 @@
 		<div>
 								<input type="hidden" name="currentPage" id="currentPage" value="BR0wGNq1Wpm4boNzHwuBeNVDwuBeQKxX86IAnNX7wuBeWdUUgdOs=">
 			    
-    			    			    			        						    <input id="saveForm" name="saveForm" class="btTxt submit" type="buttob" value="Submit" onclick="validateForm()">
+    			    			    			        						    <input id="saveForm" name="saveForm" class="btTxt submit" type="button" value="Submit" onclick="validateForm()">
 					
 		
     
