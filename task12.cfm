@@ -5,9 +5,11 @@ SELECT firstname,lastname FROM users;
 <cfdump var = "#getUsers#">
 <cfset n = "#fld_userNumber#" />
 <cfquery name = "getNrow">
-SELECT firstname FROM users ORDER BY firstname LIMIT <cfqueryparam value="#n#" cfsqltype="cf_sql_integer">,1;
+SELECT firstname FROM users ;
 </cfquery>
-<cfoutput>#getNrow.firstname#</cfoutput>
+<cfset x = getNrow.firstname[#n#]>
+<cfoutput>#x#</cfoutput>
+<!--- <cfoutput>#getNrow.firstname#</cfoutput> --->
 </cfif>
 <!DOCTYPE html>
 <html>
@@ -21,7 +23,7 @@ SELECT firstname FROM users ORDER BY firstname LIMIT <cfqueryparam value="#n#" c
  <tr><td align="center">
    <label for="fld_userNumber">Enter Number:</label>					
  </td>
- <td align="left"><input name="fld_userNumber" id="fld_userNumber" required="true" /></td>
+ <td align="left"><input name="fld_userNumber" id="fld_userNumber" required="true" pattern="[1-9]{1}" title="Enter a number between 1-9" /></td>
  </tr>
   <tr><td align="right"><input type="submit" value="Submit">
   </td>

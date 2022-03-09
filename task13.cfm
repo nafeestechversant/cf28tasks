@@ -3,8 +3,9 @@
 
 <cfscript>
     myString="the quick brown fox jumps over the lazy dog"
-    writeOutput("The count of #fld_userText# is: " & ListValueCount(myString,"#fld_userText#"," "))
+    writeOutput("The count of <span style='color: red;''>#fld_userText#</span> is: " & ListValueCount(myString,"#fld_userText#"," "))
 </cfscript>
+
 </cfif>
 <!DOCTYPE html>
 <html>
