@@ -91,7 +91,8 @@
   <td>
 
   <form action="task28_2.cfm?From=Delete&ID=#pageid#" method="post">
-  <input type="submit" value="Delete">
+  <a href="javascript:confirmDelete(#pageid#);">Delete</a>
+<!---   <input type="submit" value="Delete"> --->
   </form>
   </td>
   </tr>
@@ -101,6 +102,18 @@
 </cfif>
 
  </div>
-
+	<script>
+		function confirmDelete(pageID)
+		{
+			if(window.confirm('Are you sure you want to delete this Page?'))
+			{
+				window.location.href = 'task28_2.cfm?From=Delete&ID='+pageID;
+			}
+			else
+			{
+				null;
+			}
+		}
+	</script>
  </body>
  </html>

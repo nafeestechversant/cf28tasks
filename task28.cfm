@@ -3,6 +3,7 @@
 <cfif structKeyExists(form,'fld_FormSubmit')>
 <cfquery>INSERT INTO task28 (username, pwd, role)
            VALUES ('#form.fld_userName#', '#form.fld_userPwd#', '#form.fld_userRole#')</cfquery>
+<cfoutput>Created Successfully</cfoutput>
 </cfif>
 <html>
  <head>
@@ -27,9 +28,9 @@
  </td>
  <td align="left"><select name="fld_userRole" required="true">
  <option value=""></option>
- <option value="admin">Admin</option>
- <option value="editor">Editor</option>
- <option value="user">User</option>
+ <option value=1>Admin</option>
+ <option value=2>Editor</option>
+ <option value=3>User</option>
  </select>
  </td>
  </tr>
