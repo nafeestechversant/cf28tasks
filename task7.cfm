@@ -1,9 +1,6 @@
-
 <cfif structKeyExists(form,'fld_FormSubmit')>
-
 <cfset glob_var = application.myglobalvariable />
-
-<CFSET value=StructInsert(glob_var, "#fld_userKey#", "#fld_userValue#")>
+<cfset value=StructInsert(glob_var, "#fld_userKey#", "#fld_userValue#")>
 <cfdump  var="#glob_var#">
 </cfif>
 <!DOCTYPE html>
