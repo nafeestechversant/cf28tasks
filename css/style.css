@@ -13,3 +13,15 @@
 .red {
     color: red;
 }
+.greenFt {
+    color: green;
+    font-size:20pt;
+}
+.redFt {
+    color: red;
+    font-size:15pt;
+}
+.blueFt {
+    color: blue;
+    font-size:25pt;
+}
