@@ -1,8 +1,6 @@
-
-
 <cfif structKeyExists(form,'fld_FormSubmit')>
-<cfquery>INSERT INTO task28 (username, pwd, role)
-           VALUES ('#form.fld_userName#', '#form.fld_userPwd#', '#form.fld_userRole#')</cfquery>
+ <cfset checkLogin = application.task28.getQueryTask28() />
+
 <cfoutput>Created Successfully</cfoutput>
 </cfif>
 <html>

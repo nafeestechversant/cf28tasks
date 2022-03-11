@@ -12,6 +12,11 @@
 		<cfset application.utils = createObject("component",'utils') />
 		<cfset application.task23 = createObject("component",'task23') />
 		<cfset application.tagCloud = createObject("component",'tagCloud') />
+		<cfset application.task11 = createObject("component",'task11') />
+		<cfset application.task12 = createObject("component",'task12') />
+		<cfset application.task24 = createObject("component",'task24') />
+		<cfset application.task27 = createObject("component",'task27') />
+		<cfset application.task28 = createObject("component",'task28') />
 		<cfset application.myglobalvariable = structNew()>
 		<cfreturn true />
 	</cffunction>

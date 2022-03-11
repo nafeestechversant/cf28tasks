@@ -1,8 +1,13 @@
+<cfset ArrData = arrayNew(1) />
+<cfset glob_var = structNew() />
 <cfif structKeyExists(form,'fld_FormSubmit')>
-<cfset glob_var = application.myglobalvariable />
-<cfset value=StructInsert(glob_var, "#fld_userKey#", "#fld_userValue#")>
-<cfdump  var="#glob_var#">
+<cfdump  var="#form#" label="form">
+<cfset value=StructInsert(glob_var, "#fld_userKey#", "#fld_userValue#",true)>
+<cfset ArrayAppend(ArrData, value,"true")>
+<cfdump  var="#ArrData#" label="array">
+<cfdump  var="#glob_var#" label="struct">
 </cfif>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +15,7 @@
 <title>Task 7</title>
 </head>
 <body>
-<cfform id="">
+<form id="" method="post">
 <table width="75%" cellpadding="0" cellspacing="0">
  <tr><td align="center">
    <label for="fld_userKey">Enter Key:</label>					
@@ -26,6 +31,6 @@
   </td>
   </tr>
  </table>
-</cfform>
+</form>
 </body>
 </html>

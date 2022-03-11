@@ -4,9 +4,7 @@
 
 
 <cfif structKeyExists(form,'fld_FormSubmit')>
-<cfquery name="checkLogin">
-SELECT userid,username,pwd,role FROM task28 WHERE username = '#form.fld_userName#' AND pwd = '#form.fld_userPwd#'
-</cfquery>
+ <cfset checkLogin = application.task28.getLoginQuery() />
 <cfif #checkLogin.recordcount# EQ 1>
 
 <cfset session.stLoggedInUser = {'userUserName' = #checkLogin.username#, 'userID' = #checkLogin.userid#, 'userRole' = #checkLogin.role#} > 
