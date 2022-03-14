@@ -7,7 +7,7 @@
       <cfset session.stLoggedInUser = {'userFirstName' = #checkLogin.FirstName#, 'userLastName' = #checkLogin.Surname#, 'userID' = #checkLogin.ID#} > 
       <cflocation url = "welcome.cfm">
     <cfelse>
-      <p style="color:#ff0000"> Login failed</p>
+      <p class="red"> Login failed</p>
     </cfif>
 </cfif>
 <!DOCTYPE html>
