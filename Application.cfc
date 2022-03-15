@@ -8,7 +8,14 @@
 	
 
     <!---OnApplicationStart() method--->
-	<cffunction name="onApplicationStart" returntype="boolean" >		
+	<cffunction name="onApplicationStart" returntype="boolean" >	
+
+		<cfset application.task1 = createObject("component",'task1') />
+		<cfset application.task2 = createObject("component",'task2') />	
+		<cfset application.task3 = createObject("component",'task3') />	
+		<cfset application.task4 = createObject("component",'task4') />	
+		<cfset application.task5 = createObject("component",'task5') />	
+		<cfset application.task6 = createObject("component",'task6') />
 		<cfset application.utils = createObject("component",'utils') />
 		<cfset application.task23 = createObject("component",'task23') />
 		<cfset application.tagCloud = createObject("component",'tagCloud') />

@@ -1,10 +1,5 @@
-<cfif isDefined("fld_userNumber")>
-  <cfswitch expression="#fld_userNumber#"> 
-    <cfcase value=5>Very good!</cfcase>
-    <cfcase value=4 >Good!</cfcase> 
-    <cfcase value=3>Fair!</cfcase>
-    <cfdefaultcase>Ok</cfdefaultcase> 
-  </cfswitch>
+<cfif structKeyExists(Form,"formSubmit")>
+  <cfset res = application.task2.task2()>  
 </cfif>
 <!DOCTYPE html>
   <html>
@@ -13,7 +8,7 @@
         <title>Task 2</title>
     </head>
       <body>
-        <form id="">
+        <form id="" method="POST">
           <table>
             <tr>
               <td>
@@ -25,7 +20,7 @@
             </tr>
             <tr>
               <td>
-                <input type="submit" value="Submit">
+                <input type="submit" name="formSubmit" value="Submit">
               </td>
             </tr>
           </table>

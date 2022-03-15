@@ -1,16 +1,9 @@
-
-<cfif isDefined("fld_userdob")>
-  <cfset age = dateDiff("yyyy", #fld_userdob#, now())>
-  <cfset motherage = dateDiff("yyyy", #fld_motherdob#, #fld_userdob#)>
-  <cfset today = now()>
-  <cfset userDays = createDate(year(today), DateFormat(#fld_userdob#,"mm"), DateFormat(#fld_userdob#,"dd"))>
-  <cfset Userdaystill = dateDiff("d", now(), userDays)>
-  <cfset motherDays = createDate(year(today), DateFormat(#fld_motherdob#,"mm"), DateFormat(#fld_motherdob#,"dd"))>
-  <cfset Motherdaystill = dateDiff("d", now(), motherDays)>
-  <cfoutput>User Age: #age#<br></cfoutput>
-  <cfoutput>Mother delivered Her: #motherage#<br></cfoutput>
-  <cfoutput>User days Remaining : #Userdaystill#<br></cfoutput>
-  <cfoutput>Mother days Remaining : #Motherdaystill#<br></cfoutput>
+<cfif structKeyExists(Form,"formSubmit")>
+  <cfset res = application.task5.task5()>  
+  <cfoutput>User Age: #res.age#<br></cfoutput>
+  <cfoutput>Mother delivered Her: #res.motherage#<br></cfoutput>
+  <cfoutput>User days Remaining : #res.Userdaystill#<br></cfoutput>
+  <cfoutput>Mother days Remaining : #res.Motherdaystill#<br></cfoutput>
 </cfif>
 <!DOCTYPE html>
   <html>
@@ -19,7 +12,7 @@
       <title>Task 5</title>
     </head>
       <body>
-        <form id="">
+        <form id="" method="POST">
           <table>
             <tr>
               <td>
@@ -39,7 +32,7 @@
             </tr>
             <tr>
               <td>
-                <input type="submit" value="Submit">
+                <input type="submit" name="formSubmit" value="Submit">
               </td>
             </tr>
           </table>
