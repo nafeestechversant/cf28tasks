@@ -1,11 +1,5 @@
-<cfif isDefined("fld_userNumber")>
-  <cfset my_list = "#fld_userNumber#">
-    <cfloop list="#my_list#" index="i">    
-      <cfif i mod 3>                   
-        <cfcontinue>
-      </cfif>
-      <cfoutput>#i#,</cfoutput>          
-    </cfloop>
+<cfif structKeyExists(Form,"formSubmit")>
+  <cfset res = application.task3.task3()>  
 </cfif>
 <!DOCTYPE html>
   <html>
@@ -14,7 +8,7 @@
         <title>Task 3</title>
     </head>
       <body>
-        <form id="">
+        <form id="" method="POST">
           <table>
             <tr>
               <td>
@@ -26,7 +20,7 @@
             </tr>
             <tr>
               <td>
-                <input type="submit" value="Submit">
+                <input type="submit" name="formSubmit" value="Submit">
               </td>
             </tr>
           </table>

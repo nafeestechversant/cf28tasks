@@ -1,7 +1,6 @@
-<cfif isDefined("fld_userKey")>
-  <cfset stUser = structNew() />
-  <cfset value=StructInsert(stUser, "#fld_userKey#", "#fld_userValue#")>
-  <cfdump  var="#stUser#">
+<cfif isDefined("fld_userKey")>  
+  <cfset res = application.task6.task6()>  
+  <cfdump  var="#res#">
 </cfif>
 <!DOCTYPE html>
   <html>
@@ -10,7 +9,7 @@
         <title>Task 6</title>
     </head>
       <body>
-        <form id="">
+        <form id="" method="POST">
           <table>
             <tr>
               <td>

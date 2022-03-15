@@ -1,13 +1,5 @@
-<cfif isDefined("fld_userNumber")>
-  <cfif fld_userNumber eq 5>
-    Very good!
-      <cfelseif fld_userNumber eq 4>
-        Good!
-      <cfelseif fld_userNumber eq 3>
-        Fair!    
-      <cfelse>
-        Ok
-  </cfif>
+<cfif structKeyExists(Form,"formSubmit")>
+  <cfset res = application.task1.task1()>  
 </cfif>
 <!DOCTYPE html>
   <html>
@@ -16,7 +8,7 @@
         <title>Task 1</title>
     </head>
       <body>
-        <form id="">
+        <form id="" method= "POST">
           <table>
             <tr>
               <td>
@@ -28,7 +20,7 @@
             </tr>
             <tr>
               <td>
-                <input type="submit" value="Submit">
+                <input type="submit" name="formSubmit" value="Submit">
               </td>
             </tr>
           </table>

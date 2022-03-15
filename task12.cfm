@@ -1,7 +1,7 @@
 <cfif isDefined("fld_userNumber")>
   <cfset res = application.task12.getUsers() />
   <cfdump var = "#res#">
-  <cfset n = "#fld_userNumber#" />
+  <cfset n = "#Form.fld_userNumber#" />
   <cfset x = res.firstname[#n#]>
   <cfoutput>#x#</cfoutput>
 </cfif>
@@ -12,7 +12,7 @@
         <title>Task 12</title>
     </head>
       <body>
-        <form id="">
+        <form id="" method="post">
           <table>
             <tr>
               <td align="center">
