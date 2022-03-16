@@ -1,13 +1,6 @@
-<cfif isDefined("submit")>
-  <cfif IsDefined("Cookie.VisitsCounter") is False>
-    <cfcookie name="VisitsCounter" value=1 />
-      <cfoutput>VisitsCount : 1</cfoutput>
-  <cfelse> 
-    <cfset cookie_value = #cookie.VisitsCounter# />
-    <cfset update_cookie = cookie_value + 1/>
-    <cfcookie name="VisitsCounter" value=#update_cookie# />
-    <cfoutput>VisitsCount : #VisitsCounter#</cfoutput>
-  </cfif> 
+<cfif structKeyExists(Form,"submit")>
+  <cfset variables.res = application.task19.task19()>    
+  <cfoutput>VisitsCount : #variables.res.VisitsCount#</cfoutput>
 </cfif>
 <!DOCTYPE html>
   <html>

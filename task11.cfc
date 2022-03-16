@@ -6,12 +6,12 @@
 		<cfargument name="arg3" type="Numeric" />
 		<cfargument name="arg4" type="Numeric" />
     		<cfif isDefined("arg4")>
-      			<cfset multiple = arg1 * arg2 * arg3 * arg4 />
-      			<cfelseif isDefined("arg3")>
-      				<cfset multiple = arg1 * arg2 * arg3  />
-      			<cfelse>
-       				<cfset multiple = arg1 * arg2 />
+      			<cfset variables.multiple = arg1 * arg2 * arg3 * arg4 />
+      		<cfelseif isDefined("arg3")>
+      			<cfset variables.multiple = arg1 * arg2 * arg3  />
+      		<cfelse>
+       			<cfset variables.multiple = arg1 * arg2 />
     		</cfif>    
-	 	<cfreturn multiple />
+	 	<cfreturn variables.multiple />
 	</cffunction>
 </cfcomponent>

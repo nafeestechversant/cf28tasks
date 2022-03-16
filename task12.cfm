@@ -1,9 +1,7 @@
-<cfif isDefined("fld_userNumber")>
-  <cfset res = application.task12.getUsers() />
-  <cfdump var = "#res#">
-  <cfset n = "#Form.fld_userNumber#" />
-  <cfset x = res.firstname[#n#]>
-  <cfoutput>#x#</cfoutput>
+<cfif structKeyExists(Form,"formSubmit")>
+  <cfset variables.res = application.task12.getUsers() />
+  <cfdump var = "#variables.res.rs_getUsers#">
+  <cfoutput>#variables.res.firstName#</cfoutput>
 </cfif>
 <!DOCTYPE html>
   <html>
@@ -24,7 +22,7 @@
             </tr>
             <tr>
               <td align="right">
-                <input type="submit" value="Submit">
+                <input type="submit" name="formSubmit" value="Submit">
               </td>
             </tr>
           </table>

@@ -1,4 +1,4 @@
-<cfif isDefined("fld_userText")>
+<cfif structKeyExists(Form,"formSubmit")>
   <cfscript>
     myString="the quick brown fox jumps over the lazy dog"
     writeOutput("The count of <span style='color: red;''>#fld_userText#</span> is: " & ListValueCount(myString,"#fld_userText#"," "))
@@ -23,7 +23,7 @@
             </tr>
             <tr>
               <td align="right">
-                <input type="submit" value="Submit">
+                <input type="submit" name="formSubmit" value="Submit">
               </td>
             </tr>
           </table>

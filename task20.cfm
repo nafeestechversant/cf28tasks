@@ -1,17 +1,5 @@
 <cfif structKeyExists(form, 'fld_userSubmit')>
-  <cfset errorMessage= arrayNew(1) />
-    <cfif form.fld_userEmail EQ '' OR NOT isValid("eMail", form.fld_userEmail)>
-      <cfset arrayAppend(errorMessage, 'Please Enter valid Email')>
-    </cfif>
-    <cfif form.fld_userCaptcha EQ ''>
-      <cfset arrayAppend(errorMessage, 'Please Enter Captcha')>
-    </cfif>
-    <cfif  form.fld_userCaptcha NOT EQUAL form.fld_correctCaptcha>
-      <cfset arrayAppend(errorMessage, 'Please Enter Correct Captcha')>
-    </cfif>
-    <cfif arrayIsEmpty(errorMessage)>
-      <cfoutput>Email Address successfully subscribe our newsletter</cfoutput>
-    </cfif>
+  <cfset variables.errorMessage = application.task20.task20() />  
 </cfif>
 <cfset securityCode = application.utils.generateCaptcha() />
 <!DOCTYPE html>

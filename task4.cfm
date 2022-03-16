@@ -1,4 +1,4 @@
- <cfset res = application.task4.task4()>  
+ <cfset variables.res = application.task4.task4()>  
 <!DOCTYPE html>
   <html>
     <head>
@@ -37,7 +37,7 @@
               <label for="fld_userNumber">Last Friday Date:</label>					
             </td>
             <td>            
-              <cfoutput>#DateFormat(res.LastFridayDate,"dd/mm/yyyy")#</cfoutput>
+              <cfoutput>#DateFormat(variables.res.LastFridayDate,"dd/mm/yyyy")#</cfoutput>
             </td>
           </tr>
           <tr>
@@ -45,7 +45,7 @@
               <label for="fld_userNumber">Last day of month:</label>					
             </td>
             <td>                    
-              <cfoutput>#Day(res.Lastdayofmonth)#<br></cfoutput>
+              <cfoutput>#Day(variables.res.Lastdayofmonth)#<br></cfoutput>
             </td>
           </tr>
           <tr>
@@ -53,11 +53,11 @@
               <label for="fld_userNumber">Show Last 5 days date:</label>					
             </td>
             <td>         
-              <cfoutput><span class="black">#DateFormat(res.lastOfNextMonth0,"dd-mmm-yyyy")# - #DateFormat(res.lastOfNextMonth0,"dddd")#</span><br></cfoutput>
-              <cfoutput><span class="yellow">#DateFormat(res.lastOfNextMonth1,"dd-mmm-yyyy")# - #DateFormat(res.lastOfNextMonth1,"dddd")#</span><br></cfoutput>
-              <cfoutput><span class="orange">#DateFormat(res.lastOfNextMonth2,"dd-mmm-yyyy")# - #DateFormat(res.lastOfNextMonth2,"dddd")#</span><br></cfoutput>
-              <cfoutput><span class="green">#DateFormat(res.lastOfNextMonth3,"dd-mmm-yyyy")# - #DateFormat(res.lastOfNextMonth3,"dddd")#</span><br></cfoutput>
-              <cfoutput><span class="red">#DateFormat(res.lastOfNextMonth4,"dd-mmm-yyyy")# - #DateFormat(res.lastOfNextMonth4,"dddd")#</span><br></cfoutput>
+              <cfoutput><span class="black">#DateFormat(variables.res.lastOfNextMonth0,"dd-mmm-yyyy")# - #DateFormat(variables.res.lastOfNextMonth0,"dddd")#</span><br></cfoutput>
+              <cfoutput><span class="yellow">#DateFormat(variables.res.lastOfNextMonth1,"dd-mmm-yyyy")# - #DateFormat(variables.res.lastOfNextMonth1,"dddd")#</span><br></cfoutput>
+              <cfoutput><span class="orange">#DateFormat(variables.res.lastOfNextMonth2,"dd-mmm-yyyy")# - #DateFormat(variables.res.lastOfNextMonth2,"dddd")#</span><br></cfoutput>
+              <cfoutput><span class="green">#DateFormat(variables.res.lastOfNextMonth3,"dd-mmm-yyyy")# - #DateFormat(variables.res.lastOfNextMonth3,"dddd")#</span><br></cfoutput>
+              <cfoutput><span class="red">#DateFormat(variables.res.lastOfNextMonth4,"dd-mmm-yyyy")# - #DateFormat(variables.res.lastOfNextMonth4,"dddd")#</span><br></cfoutput>
             </td>
           </tr> 
         </table>
