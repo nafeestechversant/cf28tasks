@@ -7,12 +7,12 @@
       <body>
         <table>
           <tr>
-            <cfset res = application.task11.mulitiply(1,2)>
-            <cfdump var="#res#"><br>
-            <cfset res = application.task11.mulitiply(1,2,3)>
-            <cfdump var="#res#"><br>
-            <cfset res = application.task11.mulitiply(1,2,3,4)>
-            <cfdump var="#res#">
+            <cfset variables.res = application.task11.mulitiply(1,2)>
+            <cfdump var="#variables.res#"><br>
+            <cfset variables.res = application.task11.mulitiply(1,2,3)>
+            <cfdump var="#variables.res#"><br>
+            <cfset variables.res = application.task11.mulitiply(1,2,3,4)>
+            <cfdump var="#variables.res#">
           </tr>
         </table>
       </body>

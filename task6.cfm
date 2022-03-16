@@ -1,6 +1,6 @@
-<cfif isDefined("fld_userKey")>  
-  <cfset res = application.task6.task6()>  
-  <cfdump  var="#res#">
+<cfif structKeyExists(Form,"formSubmit")>
+  <cfset variables.res = application.task6.task6()>  
+  <cfdump  var="#variables.res#">
 </cfif>
 <!DOCTYPE html>
   <html>
@@ -29,7 +29,7 @@
             </tr>
             <tr>
               <td align="right">
-                <input type="submit" value="Submit">
+                <input type="submit" name="formSubmit" value="Submit">
               </td>
             </tr>
           </table>

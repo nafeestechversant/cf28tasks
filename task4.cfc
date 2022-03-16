@@ -1,30 +1,30 @@
 <cfcomponent>
 	<cffunction access="public" name="task4">
-		<cfset currentDate = Now() /> 		
-		<cfset todaydayOfWeek = dayOfWeek(currentDate)>
-		<cfset fridayOffset = (6-todaydayOfWeek)-7>
-		<cfset mostRecentFriday = dateAdd("d", fridayOffset, currentDate)>
+		<cfset variables.currentDate = Now() /> 		
+		<cfset variables.todaydayOfWeek = dayOfWeek(variables.currentDate)>
+		<cfset variables.fridayOffset = (6-variables.todaydayOfWeek)-7>
+		<cfset variables.mostRecentFriday = dateAdd("d", variables.fridayOffset, variables.currentDate)>
 
-		<cfset firstOfThisMonth = createDate(year(currentDate), month(currentDate), 1)>
-        <cfset lastOfNextMonth = dateAdd("d", -1, dateAdd("m", 1, firstOfThisMonth))>
+		<cfset variables.firstOfThisMonth = createDate(year(variables.currentDate), month(variables.currentDate), 1)>
+        <cfset variables.lastOfNextMonth = dateAdd("d", -1, dateAdd("m", 1, variables.firstOfThisMonth))>
 
-		<cfset lastOfNextMonth0 = dateAdd("d", -1, dateAdd("m", 1, firstOfThisMonth))>
-		<cfset lastOfNextMonth1 = dateAdd("d", -2, dateAdd("m", 1, firstOfThisMonth))>
-		<cfset lastOfNextMonth2 = dateAdd("d", -3, dateAdd("m", 1, firstOfThisMonth))>
-		<cfset lastOfNextMonth3 = dateAdd("d", -4, dateAdd("m", 1, firstOfThisMonth))>
-		<cfset lastOfNextMonth4 = dateAdd("d", -5, dateAdd("m", 1, firstOfThisMonth))>
+		<cfset variables.lastOfNextMonth0 = dateAdd("d", -1, dateAdd("m", 1, variables.firstOfThisMonth))>
+		<cfset variables.lastOfNextMonth1 = dateAdd("d", -2, dateAdd("m", 1, variables.firstOfThisMonth))>
+		<cfset variables.lastOfNextMonth2 = dateAdd("d", -3, dateAdd("m", 1, variables.firstOfThisMonth))>
+		<cfset variables.lastOfNextMonth3 = dateAdd("d", -4, dateAdd("m", 1, variables.firstOfThisMonth))>
+		<cfset variables.lastOfNextMonth4 = dateAdd("d", -5, dateAdd("m", 1, variables.firstOfThisMonth))>
 
-		<cfset returnData = {
-			"LastFridayDate" = mostRecentFriday,
-			"Lastdayofmonth" = lastOfNextMonth,
-			"lastOfNextMonth0" = lastOfNextMonth0,
-			"lastOfNextMonth1" = lastOfNextMonth1,
-			"lastOfNextMonth2" = lastOfNextMonth2,
-			"lastOfNextMonth3" = lastOfNextMonth3,
-			"lastOfNextMonth4" = lastOfNextMonth4
+		<cfset variables.returnData = {
+			"LastFridayDate" = variables.mostRecentFriday,
+			"Lastdayofmonth" = variables.lastOfNextMonth,
+			"lastOfNextMonth0" = variables.lastOfNextMonth0,
+			"lastOfNextMonth1" = variables.lastOfNextMonth1,
+			"lastOfNextMonth2" = variables.lastOfNextMonth2,
+			"lastOfNextMonth3" = variables.lastOfNextMonth3,
+			"lastOfNextMonth4" = variables.lastOfNextMonth4
 		}>
 
-		<cfreturn returnData />
+		<cfreturn variables.returnData />
 	</cffunction>
 </cfcomponent>	 	 	
 

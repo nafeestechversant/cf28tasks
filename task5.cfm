@@ -1,9 +1,9 @@
 <cfif structKeyExists(Form,"formSubmit")>
-  <cfset res = application.task5.task5()>  
-  <cfoutput>User Age: #res.age#<br></cfoutput>
-  <cfoutput>Mother delivered Her: #res.motherage#<br></cfoutput>
-  <cfoutput>User days Remaining : #res.Userdaystill#<br></cfoutput>
-  <cfoutput>Mother days Remaining : #res.Motherdaystill#<br></cfoutput>
+  <cfset variables.res = application.task5.task5()>  
+  <cfoutput>User Age: #variables.res.age#<br></cfoutput>
+  <cfoutput>Mother delivered Her: #variables.res.motherage#<br></cfoutput>
+  <cfoutput>User days Remaining : #variables.res.Userdaystill#<br></cfoutput>
+  <cfoutput>Mother days Remaining : #variables.res.Motherdaystill#<br></cfoutput>
 </cfif>
 <!DOCTYPE html>
   <html>

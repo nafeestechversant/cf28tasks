@@ -1,5 +1,5 @@
 <cfif structKeyExists(Form,"formSubmit")>
-  <cfset res = application.task2.task2()>  
+  <cfset variables.res = application.task2.task2()>  
 </cfif>
 <!DOCTYPE html>
   <html>
