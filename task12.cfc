@@ -4,7 +4,8 @@
 		<cfquery name="rs_getUsers">
 			SELECT firstname,lastname FROM users;
 		</cfquery>
-			<cfset variables.n = "#Form.fld_userNumber#" />
+			<cfset variables.fld_userNumber = form.fld_userNumber/>	
+			<cfset variables.n = "#variables.fld_userNumber#" />
   			<cfset variables.firstName = rs_getUsers.firstname[#variables.n#]>
 
 			<cfset variables.returnData = { 

@@ -16,6 +16,9 @@
           </cfloop>
         </cfoutput>
       </cfif>
+        <cfparam name="form.fld_userCaptcha"  default=""  type="string">
+        <cfparam name="form.fld_userEmail"  default=""  type="string">
+        <cfparam name="form.fld_correctCaptcha"  default=""  type="string">
         <form id="" method="post">
           <table>
             <input type="hidden" name="fld_correctCaptcha" value=<cfoutput>#securityCode#</cfoutput>  />

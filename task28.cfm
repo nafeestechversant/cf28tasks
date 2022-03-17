@@ -1,5 +1,5 @@
 <cfif structKeyExists(form,'fld_FormSubmit')>
- <cfset checkLogin = application.task28.getQueryTask28() />
+  <cfset application.task28.getQueryTask28() />
   <cfoutput>Created Successfully</cfoutput>
 </cfif>
 <html>

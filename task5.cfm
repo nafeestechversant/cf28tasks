@@ -12,6 +12,8 @@
       <title>Task 5</title>
     </head>
       <body>
+      <cfparam name="form.fld_userdob"  default="18/04/2019"  type="string">
+      <cfparam name="form.fld_motherdob"  default="15/06/1996"  type="string">
         <form id="" method="POST">
           <table>
             <tr>

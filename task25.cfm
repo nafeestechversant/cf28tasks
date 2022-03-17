@@ -1,6 +1,6 @@
-<cfif structKeyExists(form,'fld_FormSubmit')>
-  <cfset list = "#form.fld_userDesc#"> 
-  <cfset stringInfo = application.tagCloud.addString(form.fld_userDesc) />
+<cfif structKeyExists(form,'fld_FormSubmit')>  
+  <cfset application.tagCloud.addString(form.fld_userDesc) />
+  <cfoutput>Data Stored Successfully</cfoutput>
 </cfif>
 <!DOCTYPE html>
 <html>
@@ -9,6 +9,7 @@
       <title>Task 25</title>
   </head>
   <body>
+  <cfparam name="form.fld_userDesc"  default=""  type="string">
   <form id="" name="myform" method="post">
     <table>
       <tr>

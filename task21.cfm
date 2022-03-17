@@ -14,6 +14,9 @@
     <title>Task 21</title>
   </head>
     <body>
+      <cfparam name="form.fld_userName"  default=""  type="string">
+      <cfparam name="form.fld_userEmail"  default=""  type="string">
+      <cfparam name="form.fld_userDesc"  default=""  type="string">
       <form id="" method="post" enctype="multipart/form-data">
         <table>
           <tr>

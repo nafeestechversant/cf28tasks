@@ -2,17 +2,17 @@
   <!---addUser() method--->
 	<cffunction name="addString" access="public" returntype="void">
     <cfargument name="userString" type="string" required="true" />
-      <cfset words = reMatch("[[:word:]]+", #arguments.userString#)>
-      <cfset wordCount = structNew()>
-        <cfloop index="word" array="#words#"> 
-          <cfif structKeyExists(wordCount, word)> 
-            <cfset wordCount[word]++> 
+      <cfset variables.words = reMatch("[[:word:]]+", #arguments.userString#)>
+      <cfset variables.wordCount = structNew()>
+        <cfloop index="word" array="#variables.words#"> 
+          <cfif structKeyExists(variables.wordCount, word)> 
+            <cfset variables.wordCount[word]++> 
           <cfelse> 
-            <cfset wordCount[word] = 1> 
+            <cfset variables.wordCount[word] = 1> 
           </cfif> 
         </cfloop>
-          <cfset sorted = structSort(wordCount)> 
-            <cfloop index="word" array="#sorted#"> 
+          <cfset variables.sorted = structSort(variables.wordCount)> 
+            <cfloop index="word" array="#variables.sorted#"> 
               <cfquery>
                 INSERT INTO task25 (words, word_count)
                   VALUES ('#word#',#wordCount[word]#)
@@ -29,17 +29,17 @@
 
    <cffunction name="addStringTask26" access="public" returntype="void">
     <cfargument name="userString" type="string" required="true" />
-      <cfset words = reMatch("[[:word:]]+", #arguments.userString#)>
-      <cfset wordCount = structNew()>
-        <cfloop index="word" array="#words#"> 
-          <cfif structKeyExists(wordCount, word)> 
-            <cfset wordCount[word]++> 
+      <cfset variables.words = reMatch("[[:word:]]+", #arguments.userString#)>
+      <cfset variables.wordCount = structNew()>
+        <cfloop index="word" array="#variables.words#"> 
+          <cfif structKeyExists(variables.wordCount, word)> 
+            <cfset variables.wordCount[word]++> 
           <cfelse> 
-            <cfset wordCount[word] = 1> 
+            <cfset variables.wordCount[word] = 1> 
           </cfif> 
         </cfloop>
-          <cfset sorted = structSort(wordCount)> 
-            <cfloop index="word" array="#sorted#"> 
+          <cfset variables.sorted = structSort(variables.wordCount)> 
+            <cfloop index="word" array="#variables.sorted#"> 
               <cfquery>
                 INSERT INTO task26 (words, word_count)
                   VALUES ('#word#',#wordCount[word]#)

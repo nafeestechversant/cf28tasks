@@ -11,6 +11,8 @@
   </head>
   <body>
     <p id="erroeMsg" style='color: red'></p>
+    <cfparam name="form.fld_userName"  default=""  type="string">
+    <cfparam name="form.fld_userEmail"  default=""  type="string">
     <form id="" name="myform" method="post">
       <tabl>
         <tr>
