@@ -1,22 +1,22 @@
-<cfset output3 = "insert" />
+<cfset variables.output3 = "insert" />
   <cfif structKeyExists(form,'fld_FormSubmit')>
     <cfif #form.formAction# IS "insert">
       <cfinsert tablename="task28_1" formFields = "pagename,pagedescs"> 
       <p class="green">Page Added</p> 
     <cfelse>
       <!--- <cfupdate  tablename="task28_1"> --->
-      <cfset updatePageById = application.task28.updatePageById() />    
+      <cfset application.task28.updatePageById() />    
       <p class="green">Page Updated</p> 
     </cfif>
   </cfif>
-  <cfset output1 = "" />
-  <cfset output2 = "" />
+  <cfset variables.output1 = "" />
+  <cfset variables.output2 = "" />
   <cfif structKeyExists(URL,'From')>
     <cfif #URL.From# IS "Edit">
-      <cfset getPageById = application.task28.getPagesById() />      
-      <cfset output1 = ((getPageById.pagename EQ '') ? '' : getPageById.pagename) />
-      <cfset output2 = ((getPageById.pagedescs EQ '') ? '' : getPageById.pagedescs) />
-      <cfset output3 = "update" />
+      <cfset variables.getPageById = application.task28.getPagesById() />      
+      <cfset variables.output1 = ((variables.getPageById.pagename EQ '') ? '' : variables.getPageById.pagename) />
+      <cfset variables.output2 = ((variables.getPageById.pagedescs EQ '') ? '' : variables.getPageById.pagedescs) />
+      <cfset variables.output3 = "update" />
     </cfif>
   </cfif>
 <!DOCTYPE html>
@@ -33,23 +33,23 @@
       <cfelse>
         <cflocation url = "task28_1.cfm">
       </cfif>
-      <cfset getPages = application.task28.getPages() />      
+      <cfset variables.getPages = application.task28.getPages() />      
       <div class="topnav">
-        <cfoutput query="getPages">
+        <cfoutput query="variables.getPages">
           <a href="">#pagename#|</a>
         </cfoutput> 
       </div>
       <cfif #session.stLoggedInUser.userRole# EQ 1 OR #session.stLoggedInUser.userRole# EQ 2>
         <p><a href="task28_2.cfm">Home Page</a></p>
         <form id="" name="myform" method="post">
-          <input type="hidden" name="formAction" value="<cfoutput>#output3#</cfoutput>">
+          <input type="hidden" name="formAction" value="<cfoutput>#variables.output3#</cfoutput>">
           <table width="50%" cellpadding="0" cellspacing="0">
             <tr>
               <td align="center">
                 <label for="fld_userName">Page Name:</label>					
               </td>
               <td align="left">
-                <input name="pagename" id="pagename" required="true" value="<cfoutput>#output1#</cfoutput>" />
+                <input name="pagename" id="pagename" required="true" value="<cfoutput>#variables.output1#</cfoutput>" />
               </td>
             </tr>
             <tr>
@@ -57,7 +57,7 @@
                 <label for="fld_userEmail">Description:</label>					
               </td>
               <td align="">
-                <textarea  name="pagedescs" id="pagedescs" required="true" rows="10" cols="50" /><cfoutput>#output2#</cfoutput></textarea>  
+                <textarea  name="pagedescs" id="pagedescs" required="true" rows="10" cols="50" /><cfoutput>#variables.output2#</cfoutput></textarea>  
               </td>
             </tr>
             <tr>

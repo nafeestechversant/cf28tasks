@@ -1,5 +1,4 @@
-<cfset qList = '[{"Name":"saravanan","Age":27,"LOCATION":"dubai"},{"Name":"Ram","Age":26,"LOCATION":"Kovilpatti"}]' />
-<cfset cfData=DeserializeJSON(qList)>
+<cfset variables.cfData = application.task22.task22()>  
   <cfoutput>
     <table width="50%" cellpadding="0" cellspacing="0">
       <tr>
@@ -9,9 +8,9 @@
       </tr>
       <cfloop index="i" from="1" to="#arrayLen(cfData)#">
         <tr>
-          <td>#cfData[i].Name#</td>
-          <td>#cfData[i].Age#</td>
-          <td>#cfData[i].LOCATION#</td>
+          <td>#variables.cfData[i].Name#</td>
+          <td>#variables.cfData[i].Age#</td>
+          <td>#variables.cfData[i].LOCATION#</td>
         </tr>                   
       </cfloop>
     </table>

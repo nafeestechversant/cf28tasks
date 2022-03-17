@@ -1,6 +1,7 @@
 <cfcomponent output="false">
   <!---addUser() method--->
 	<cffunction name="addUser" access="public" output="false" returntype="void">
+		
 		<cfargument name="userPosition" type="string" required="true" />
 		<cfargument name="userRelocate" type="string" required="true" />
 		<cfargument name="userStart" type="string" required="true" />
@@ -12,7 +13,7 @@
 		<cfargument name="userEmail" type="string" required="true" />
 		<cfargument name="userPhone" type="numeric" required="true" />
 
-		<cfquery >
+		<cfquery>
 			INSERT INTO userstask23 (position, relocate, start_date, website, doc_name, salary, firstname, lastname, email_id, phone)
 			VALUES
 			(
@@ -25,7 +26,7 @@
 				<cfqueryparam value="#form.Field22#" cfsqltype="cf_sql_varchar" />,
 				<cfqueryparam value="#form.Field23#" cfsqltype="cf_sql_varchar" />,
 				<cfqueryparam value="#form.Field13#" cfsqltype="cf_sql_varchar" />,
-		<cfqueryparam value="#form.Field25#" cfsqltype="cf_sql_integer" />
+				<cfqueryparam value="#form.Field25#" cfsqltype="cf_sql_integer" />
 			)
 		</cfquery>
   </cffunction>

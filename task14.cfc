@@ -2,6 +2,9 @@
 	<cffunction access="public" name="task14">		
   		<cfset variables.thisDir = expandPath(".")>
   			<cfif structKeyExists(form,"fld_userImage") and len(trim(form.fld_userImage))>
+			  	<cfset variables.fld_userImageName = form.fld_userImageName/>	
+				<cfset variables.fld_userDesc = form.fld_userDesc/>	
+				<cfset variables.fld_userImage = form.fld_userImage/>	  
     			<cffile action="upload" fileField="form.fld_userImage" destination="#variables.thisDir#" result="fileUpload" nameconflict="overwrite">
       				<cfif fileUpload.fileWasSaved>
         				<cfif IsImageFile("#fileUpload.serverfile#")>
@@ -31,7 +34,7 @@
 										</tr>
 										<tr>
 										<td align="center">
-											<a href="task14Details.cfm?imagename=#form.fld_userImageName#&imagedesc=#form.fld_userDesc#&imagefile=#fileUpload.serverFile#">#fld_userImageName#					
+											<a href="task14Details.cfm?imagename=#variables.fld_userImageName#&imagedesc=#variables.fld_userDesc#&imagefile=#fileUpload.serverFile#">#variables.fld_userImageName#					
 										</td>
 										<td align="center">
 											<img src="#getFileFromPath(variables.newImageName)#">

@@ -1,10 +1,10 @@
-<cfset getString = application.tagCloud.getString() />
+<cfset variables.getString = application.tagCloud.getString() />
   <table border="1" width="400"> 
     <tr> 
       <th width="50%">Word</th> 
       <th>Count</th> 
     </tr>
-      <cfloop query="getString"> 
+      <cfloop query="variables.getString"> 
         <cfoutput>
           <cfif len(trim(#getString.words#)) GTE 3>
             <tr> 

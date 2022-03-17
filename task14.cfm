@@ -8,6 +8,9 @@
         <title>Task 14</title>
     </head>
       <body>
+        <cfparam name="form.fld_userImageName"  default=""  type="string">
+        <cfparam name="form.fld_userDesc"  default=""  type="string">
+        <cfparam name="form.fld_userImage"  default=""  type="string">
         <form id="" method="post" enctype="multipart/form-data">
           <table>
             <tr>

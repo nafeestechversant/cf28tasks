@@ -1,13 +1,13 @@
 <cfif structKeyExists(form,'fld_FormSubmit')>
-  <cfset myfile = FileRead("C:\ColdFusion2018\cfusion\wwwroot\cf28tasks\task26-textfile.txt") />
-  <cfset stringInfo = application.tagCloud.addStringTask26(myfile) />
-  <cfset getString = application.tagCloud.getStringTask26() />
+  <cfset variables.myfile = FileRead("C:\ColdFusion2018\cfusion\wwwroot\cf28tasks\task26-textfile.txt") />
+  <cfset application.tagCloud.addStringTask26(variables.myfile) />
+  <cfset variables.getString = application.tagCloud.getStringTask26() />
     <table border="1" width="400"> 
       <tr> 
         <th width="50%">Word</th> 
         <th>Count</th> 
       </tr>
-      <cfloop query="getString"> 
+      <cfloop query="variables.getString"> 
         <cfif #getString.word_count# GTE 3>
           <cfset class="blueFt" >  
         <cfelseif #getString.word_count#  GTE 2 and getString.word_count LTE 3 >

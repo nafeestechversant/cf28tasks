@@ -10,6 +10,7 @@
         <title>Task 12</title>
     </head>
       <body>
+        <cfparam name="form.fld_userNumber"  default=1  type="integer">
         <form id="" method="post">
           <table>
             <tr>

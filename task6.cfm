@@ -9,6 +9,8 @@
         <title>Task 6</title>
     </head>
       <body>
+        <cfparam name="form.fld_userKey"  default="key1"  type="string">
+        <cfparam name="form.fld_userValue"  default="value1"  type="string">
         <form id="" method="POST">
           <table>
             <tr>

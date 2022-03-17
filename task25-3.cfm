@@ -1,20 +1,20 @@
-<cfset getString = application.tagCloud.getString() />
+<cfset variables.getString = application.tagCloud.getString() />
   <table border="1" width="400"> 
     <tr> 
       <th width="50%">Word</th> 
       <th>Count</th> 
     </tr>
-    <cfloop query="getString"> 
+    <cfloop query="variables.getString"> 
       <cfif #getString.word_count# GTE 3>
-        <cfset class="blueFt" > 
+        <cfset variables.classname="blueFt" > 
       <cfelseif #getString.word_count#  GTE 2 and getString.word_count LTE 3 >
-        <cfset class="greenFt" > 
+        <cfset variables.classname="greenFt" > 
       <cfelse>
-        <cfset class="redFt" > 
+        <cfset variables.classname="redFt" > 
       </cfif>
         <cfoutput>
           <cfif len(trim(#getString.words#)) GTE 3>
-            <tr class="#class#"> 
+            <tr class="#variables.classname#"> 
               <td>#getString.words#</td>
               <td>#getString.word_count#</td> 
             </tr>

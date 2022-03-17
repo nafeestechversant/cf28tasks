@@ -8,6 +8,7 @@
         <title>Task 3</title>
     </head>
       <body>
+        <cfparam name="form.fld_userNumber"  default=1  type="string">
         <form id="" method="POST">
           <table>
             <tr>

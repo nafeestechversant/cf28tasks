@@ -2,9 +2,9 @@
   <cfset structdelete(session,'stLoggedInUser') />
 </cfif>
 <cfif structKeyExists(form,'fld_FormSubmit')>
-  <cfset checkLogin = application.task27.getQueryTask27() />
-    <cfif #checkLogin.recordcount# EQ 1>
-      <cfset session.stLoggedInUser = {'userFirstName' = #checkLogin.FirstName#, 'userLastName' = #checkLogin.Surname#, 'userID' = #checkLogin.ID#} > 
+  <cfset variables.checkLogin = application.task27.getQueryTask27() />
+    <cfif #variables.checkLogin.recordcount# EQ 1>
+      <cfset session.stLoggedInUser = {'userFirstName' = #variables.checkLogin.FirstName#, 'userLastName' = #variables.checkLogin.Surname#, 'userID' = #variables.checkLogin.ID#} > 
       <cflocation url = "welcome.cfm">
     <cfelse>
       <p class="red"> Login failed</p>
@@ -14,6 +14,7 @@
 <html>
   <head>
     <title><cfoutput>Task 27</cfoutput></title>
+    <link href="./css/style.css" rel="stylesheet" type="text/css" media="all" />
   </head>
   <body>
     <div align="center">

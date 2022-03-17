@@ -5,7 +5,8 @@
             <title>Task 17</title>
         </head>
             <body>
-                <form id="">
+                <cfparam name="form.fld_userNumber"  default=1  type="integer">                
+                <form id="" method="post">
                     <p id="error"></p>
                     <p id="demo"></p>
                     <table>

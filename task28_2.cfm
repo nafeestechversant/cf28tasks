@@ -9,6 +9,7 @@
 <html>
  <head>
    <title><cfoutput>Task 28</cfoutput></title>
+   <link href="./css/style.css" rel="stylesheet" type="text/css" media="all" />
  </head>
   <body>
     <div align="center">
@@ -19,21 +20,21 @@
       <cfelse>
         <cflocation url = "task28_1.cfm">
       </cfif>
-        <cfset getPages = application.task28.getPages() />
+        <cfset variables.getPages = application.task28.getPages() />
           <div class="topnav">
-            <cfoutput query="getPages">
+            <cfoutput query="variables.getPages">
               <a href="task28_2.cfm?From=View&ID=#pageid#">#pagename#</a>
             </cfoutput>
       </div>
       <cfif structKeyExists(URL,'From')>
         <cfif #URL.From# IS "View">
-          <cfset getPagesId = application.task28.getPagesById() />
+          <cfset variables.getPagesId = application.task28.getPagesById() />
             <table>
               <tr>
                 <th>Page Name</th>
                 <th>Description</th>
               </tr>
-              <cfoutput query="getPagesId">
+              <cfoutput query="variables.getPagesId">
                 <tr>
                   <td>#pagename#</td>
                   <td>#pagedescs#</td>
@@ -50,7 +51,7 @@
             <th>Page Name</th>
             <th>Description</th>
           </tr>
-          <cfoutput query="getPages">
+          <cfoutput query="variables.getPages">
             <tr>
               <td>#pageid#</td>
               <td>#pagename#</td>
