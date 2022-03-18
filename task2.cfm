@@ -8,6 +8,8 @@
         <title>Task 2</title>
     </head>
       <body>
+      <cfoutput>
+    
         <cfparam name="form.fld_userNumber"  default=1  type="integer">
         <form id="" method="POST">
           <table>
@@ -16,7 +18,7 @@
                 <label for="fld_userNumber">Enter Number:</label>					
               </td>
               <td>
-                <input name="fld_userNumber" id="fld_userNumber" required="true" message="Please provide a Number between 1 to 5." validateAt="onSubmit" />
+                <input name="fld_userNumber" id="fld_userNumber" value="#form.fld_userNumber#" required="true" message="Please provide a Number between 1 to 5." validateAt="onSubmit" />
               </td>
             </tr>
             <tr>
@@ -26,5 +28,6 @@
             </tr>
           </table>
         </form>
+          </cfoutput>
       </body>
   </html>

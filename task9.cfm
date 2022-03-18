@@ -1,16 +1,8 @@
-<cfif NOT StructKeyExists(Session, "varStruct")>
-  <cflock timeout=20 scope="Session" type="Exclusive">
-    <cfset Session.varStruct = StructNew()>
-  </cflock>
-</cfif>
 <cfif structKeyExists(form,'fld_FormSubmit')>
-  <cfif structKeyExists(Session.varStruct, "#fld_userKey#") EQ "YES">
-    <cfoutput><b>#fld_userKey#</b> already present Cannot add again</cfoutput>
-  <cfelse>
-    <cfset value=StructInsert(Session.varStruct, "#fld_userKey#", "#fld_userValue#")>
-  </cfif>
+  <cfset variables.res = application.task9.task9()>
+  <cfdump  var="#variables.res#">
 </cfif>
-<cfdump  var="#Session.varStruct#">
+
 <!DOCTYPE html>
 <html>
 <head>

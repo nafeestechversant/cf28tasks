@@ -17,9 +17,7 @@
             row.append( element );
             arrayIndex++;
         }
-    }
-</cfscript>
-<cfscript>   
+    } 
     writeOutput("<table><tbody>");   
     for( row in myMatrix2DArray  ){        
         writeOutput("<tr>");
