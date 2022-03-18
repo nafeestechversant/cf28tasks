@@ -16,6 +16,10 @@
 		<cfset application.task4 = createObject("component",'task4') />	
 		<cfset application.task5 = createObject("component",'task5') />	
 		<cfset application.task6 = createObject("component",'task6') />
+		<cfset application.task7 = createObject("component",'task7') />
+		<cfset application.task8 = createObject("component",'task8') />
+		<cfset application.task9 = createObject("component",'task9') />
+		<cfset application.task10 = createObject("component",'task10') />
 		<cfset application.utils = createObject("component",'utils') />
 		<cfset application.task23 = createObject("component",'task23') />
 		<cfset application.tagCloud = createObject("component",'tagCloud') />

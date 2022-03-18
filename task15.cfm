@@ -6,10 +6,8 @@
     <cfinvokeargument name="m5" value="5"/>
 </cfinvoke>
     <cfoutput>cfinvoke  : #result#</cfoutput><br>
-      <cfobject name="objMultiply" component="task15">
-        <cfinvoke component="#objMultiply#" method="Multiply">
+      <cfobject name="objMultiply" component="task15">      
           <cfoutput>cfobject  : #objMultiply.Multiply(1,2,3,4)#</cfoutput><br>
-            <cfscript>
-              creatObj=createObject("component","task15"); 
-            </cfscript>
-          <cfoutput>createobject : #creatObj.Multiply(1,2,3)#</cfoutput>
+            <cfset variables.creatObj=createObject("component","task15")> 
+          
+          <cfoutput>createobject : #variables.creatObj.Multiply(1,2,3)#</cfoutput>

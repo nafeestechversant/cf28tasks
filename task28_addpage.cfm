@@ -3,8 +3,7 @@
     <cfif #form.formAction# IS "insert">
       <cfinsert tablename="task28_1" formFields = "pagename,pagedescs"> 
       <p class="green">Page Added</p> 
-    <cfelse>
-      <!--- <cfupdate  tablename="task28_1"> --->
+    <cfelse>      
       <cfset application.task28.updatePageById() />    
       <p class="green">Page Updated</p> 
     </cfif>

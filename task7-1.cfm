@@ -1,14 +1,24 @@
 <cfset ArrData = arrayNew(1) />
 <cfif structKeyExists(form,'fld_FormSubmit')>
   <cfset structData = {
-			"#form.fld_userKey#" = #form.fld_userValue#
+			"key1" = "value1",
+      "key2" = "value2",
+      "key3" = "value3"
     }>
  <cfset ArrAppendData = ArrayAppend(ArrData,structData)>
  
-
-</cfif>
 <cfdump  var="#structData#" label="after struct">
 <cfdump  var="#ArrData#" label="Arr Append Data">
+
+
+<Cfloop collection="#form#" item="fItem">
+<cfoutput>
+<input type="hidden" name="#fItem#" value="#form[fItem]#"/>
+</cfoutput>
+</cfloop>
+
+</cfif>
+
 
 <!DOCTYPE html>
 <html>

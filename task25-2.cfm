@@ -1,4 +1,12 @@
-<cfset variables.getString = application.tagCloud.getString() />
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Task 25- 2</title>
+</head>
+<body>
+  <cfset variables.getString = application.tagCloud.getString() />
   <table border="1" width="400"> 
     <tr> 
       <th width="50%">Word</th> 
@@ -15,12 +23,5 @@
         </cfoutput> 
       </cfloop>
   </table>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8" />
-<title>Task 25- 2</title>
-</head>
-<body>
 </body>
 </html>
