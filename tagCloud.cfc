@@ -2,7 +2,7 @@
   <!---addUser() method--->
 	<cffunction name="addString" access="public" returntype="void">
     <cfargument name="userString" type="string" required="true" />
-    <cfset variables.words = reMatch("[[:word:]]+", #arguments.userString#)>
+    <cfset variables.words = reMatch("[[:word:]]+", arguments.userString)>
     <cfset variables.wordCount = structNew()>
     <cfloop index="word" array="#variables.words#"> 
       <cfif structKeyExists(variables.wordCount, word)> 
@@ -21,15 +21,15 @@
   </cffunction>
 
   <cffunction name="getString" access="public" output="false" returntype="query">		
-			<cfquery name="rs_getString">
+			<cfquery name="local.rs_getString">
         SELECT words,word_count FROM task25 ORDER BY word_count DESC, words ASC
 			</cfquery>
-			<cfreturn rs_getString />
+			<cfreturn local.rs_getString />
 	</cffunction>
 
    <cffunction name="addStringTask26" access="public" returntype="void">
       <cfargument name="userString" type="string" required="true" />
-      <cfset variables.words = reMatch("[[:word:]]+", #arguments.userString#)>
+      <cfset variables.words = reMatch("[[:word:]]+", arguments.userString)>
       <cfset variables.wordCount = structNew()>
       <cfloop index="word" array="#variables.words#"> 
         <cfif structKeyExists(variables.wordCount, word)> 
@@ -48,10 +48,10 @@
     </cffunction>
 
   <cffunction name="getStringTask26" access="public" output="false" returntype="query">		
-			<cfquery name="rs_getString">
+			<cfquery name="local.rs_getString">
         SELECT words,word_count FROM task26 ORDER BY word_count DESC, words ASC
 			</cfquery>
-			<cfreturn rs_getString />
+			<cfreturn local.rs_getString />
 	</cffunction>
 
 </cfcomponent>

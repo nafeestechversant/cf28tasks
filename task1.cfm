@@ -1,30 +1,32 @@
 <cfif structKeyExists(Form,"formSubmit")>
-  <cfset variables.res = application.task1.task1()>  
+  <cfinvoke component="task1" method="task1"></cfinvoke>
 </cfif>
 <!DOCTYPE html>
   <html>
     <head>
       <meta charset="utf-8" />
-        <title>Task 1</title>
+      <title>Task 1</title>
     </head>
       <body>
-      <cfparam name="form.fld_userNumber"  default=1  type="integer">
-        <form id="" method= "POST">
-          <table>
-            <tr>
-              <td>
-                <label for="fld_userNumber">Enter Number:</label>					
-              </td>
-              <td>
-                <input name="fld_userNumber" id="fld_userNumber" required="true" message="Please provide a Number between 1 to 5." validateAt="onSubmit" />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="submit" name="formSubmit" value="Submit">
-              </td>
-            </tr>
-          </table>
-        </form>
+        <cfoutput> 
+          <cfparam name="form.fld_userNumber"  default=1  type="integer">
+          <form id="" method= "POST">
+            <table>
+              <tr>
+                <td>
+                  <label for="fld_userNumber">Enter Number:</label>					
+                </td>
+                <td>
+                  <input name="fld_userNumber" id="fld_userNumber" value="#form.fld_userNumber#" required="true" message="Please provide a Number between 1 to 5." validateAt="onSubmit" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="submit" name="formSubmit" value="Submit">
+                </td>
+              </tr>
+            </table>
+          </form>
+        </cfoutput> 
       </body>
   </html>
