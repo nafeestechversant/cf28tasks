@@ -1,5 +1,5 @@
 <cfif structKeyExists(Form,"formSubmit")>
-  <cfset variables.res = application.task3.task3()>  
+  <cfinvoke component="task3" method="task3"></cfinvoke>    
 </cfif>
 <!DOCTYPE html>
   <html>
@@ -8,23 +8,25 @@
         <title>Task 3</title>
     </head>
       <body>
-        <cfparam name="form.fld_userNumber"  default=1  type="string">
-        <form id="" method="POST">
-          <table>
-            <tr>
-              <td>
-                <label for="fld_userNumber">Enter Number:</label>					
-              </td>
-              <td>
-                <input name="fld_userNumber" id="fld_userNumber" required="true" message="Please provide a Number between 1 to 5." validateAt="onSubmit" />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="submit" name="formSubmit" value="Submit">
-              </td>
-            </tr>
-          </table>
-        </form>
+        <cfoutput> 
+          <cfparam name="form.fld_userNumber"  default="3,8,9,11,12"  type="string">
+          <form id="" method="POST">
+            <table>
+              <tr>
+                <td>
+                  <label for="fld_userNumber">Enter Number:</label>					
+                </td>
+                <td>
+                  <input name="fld_userNumber" id="fld_userNumber" value="#form.fld_userNumber#" required="true" message="Please provide a Number between 1 to 5."/>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="submit" name="formSubmit" value="Submit">
+                </td>
+              </tr>
+            </table>
+          </form>
+        </cfoutput> 
       </body>
   </html>

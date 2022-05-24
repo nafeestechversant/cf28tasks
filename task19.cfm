@@ -1,5 +1,5 @@
-<cfif structKeyExists(Form,"submit")>
-  <cfset variables.res = application.task19.task19()>    
+<cfif structKeyExists(Form,"submit")>  
+  <cfinvoke component="task19" method="task19" returnvariable="res"></cfinvoke>    
   <cfoutput>VisitsCount : #variables.res.VisitsCount#</cfoutput>
 </cfif>
 <!DOCTYPE html>
@@ -9,14 +9,16 @@
         <title>Task 19</title>
     </head>
       <body>
-        <form id="" method="post">     
-          <table>
-            <tr>
-              <td align="left">
-                <input type="submit"  name="submit" value="Submit">
-              </td>
-            </tr>
-          </table>
-        </form>
+        <cfoutput> 
+          <form id="" method="post">     
+            <table>
+              <tr>
+                <td align="left">
+                  <input type="submit"  name="submit" value="Submit">
+                </td>
+              </tr>
+            </table>
+          </form>
+        </cfoutput> 
       </body>
   </html>
